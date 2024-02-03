@@ -111,8 +111,8 @@ def get_report(option="Today", start_=None, end_=None) -> pandas.DataFrame:
 
 
     if option == "Monthly":
-        start_ = "2023-05-01"
-        end_ = "2023-06-30"
+        start_ = "2024-01-01"
+        end_ = "2024-01-31"
         today = datetime.datetime.now(timezone(client_timezone))
         date_from_offset = datetime.datetime.fromisoformat(start_).astimezone(
             timezone(client_timezone)) - datetime.timedelta(days=1)
@@ -123,8 +123,6 @@ def get_report(option="Today", start_=None, end_=None) -> pandas.DataFrame:
         start_date=end_date - datetime.timedelta(days=7)
         start_ = start_date.strftime("%Y-%m-%d")
         end_ = end_date.strftime("%Y-%m-%d")
-        #start_ = "2023-06-26"
-        #end_ = "2023-07-02"
         today = datetime.datetime.now(timezone(client_timezone))
         date_from_offset = datetime.datetime.fromisoformat(start_).astimezone(
             timezone(client_timezone)) - datetime.timedelta(days=1)
